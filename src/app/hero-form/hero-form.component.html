@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Hero Form</h1>
+  <form #HeroForm="ngForm">
+    {{diagnostic}}
+<div class="form-group">
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name"
+         required #spy
+         [(ngModel)]="model.name" name="name">
+</div>
+TODO: remove this: {{spy.className}}
+<div class="form-group">
+  <label for="alterEgo">Alter Ego</label>
+  <input type="text"  class="form-control" id="alterEgo"
+         [(ngModel)]="model.alterEgo" name="alterEgo">
+</div>
+
+<div class="form-group">
+  <label for="power">Hero Power</label>
+  <select class="form-control"  id="power"
+          required
+          [(ngModel)]="model.power" name="power">
+    <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+  </select>
+</div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
+
+  </form>
+</div>
